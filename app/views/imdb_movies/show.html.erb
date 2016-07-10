@@ -10,6 +10,7 @@ Director: <%= @i.director.first %>
 
 
 <h2>Casting:</h2>
-<% @i.cast_members_characters("as").each do |c| %>
+
+<% @i.cast_members_characters("as").each_with_index do |c,index| %>
     <%= c %><br>
 <% end %>

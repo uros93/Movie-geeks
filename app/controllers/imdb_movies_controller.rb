@@ -12,5 +12,6 @@ class ImdbMoviesController < ApplicationController
     
     def show
         @i = Imdb::Movie.new(params[:movie_id])
+       
     end
 end
