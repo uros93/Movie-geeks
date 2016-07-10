@@ -2,13 +2,7 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
-      config.action_mailer.default_url_options = {:host => 'yourdomain.com'}
-    config.action_mailer.delivery_method = :smtp
-    config.action_mailer.smtp_settings = {
-      :address => "127.0.0.1",
-      :port    => "25",
-      :domain  => 'yourdomain.com'
-    }
+   
   
   config.cache_classes = true
 
@@ -84,4 +78,19 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  
+  config.action_mailer.default_url_options = { host: 'https://movie-geeks.herokuapp.com/' }
+
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.perform_deliveries = true
+
+  ActionMailer::Base.smtp_settings = {
+    :address              => 'smtp.sendgrid.net',
+    :port                 => '587',
+    :domain               => 'heroku.com',
+    :user_name            => ENV['USERNAME'],
+    :password             => ENV['PASSWORD'],
+    :authentication       => "plain",
+    :enable_starttls_auto => true
+  }
 end
