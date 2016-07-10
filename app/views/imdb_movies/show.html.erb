@@ -1,0 +1,15 @@
+<p class="text-left"><%= image_tag @i.poster, size: "200x200", class: "img-thumbnail" %></p>
+
+<h1><%= @i.title %></h1>
+<h2>Rating: <%= @i.rating %></h2>
+
+Director: <%= @i.director.first %>
+
+<p>Plot: <%= @i.plot_summary %></p>
+
+
+
+<h2>Casting:</h2>
+<% @i.cast_members_characters("as").each do |c| %>
+    <%= c %><br>
+<% end %>

@@ -1,7 +1,12 @@
 
 <% if user_signed_in? %>
     <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+    <li><%= link_to "Posts", posts_path %></li>
+    <li><%= link_to "Activity feed", home_index_path %></li>
+    <li><%= link_to "Find users", users_index_path %></li>
+    <li><%= link_to "Find movies", imdb_movies_index_path %></li>
 <% else %>
     <li><%= link_to "Sign in", new_user_session_path %></li>
     <li><%= link_to "Sign up", new_user_registration_path %></li>
+    
 <% end %>

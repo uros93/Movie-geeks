@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
+  get 'users/index'
+
+  resources :posts
   devise_for :users
   get 'welcome/index'
+  get 'home/index'
+  get 'imdb_movies/index'
+  get 'imdb_movies/show'
+  
+  match :follow, to: 'follows#create', as: :follow, via: :post
+  match :unfollow, to: 'follows#destroy', as: :unfollow, via: :post
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

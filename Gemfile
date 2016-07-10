@@ -57,6 +57,7 @@ gem 'devise'
 gem 'carrierwave'
 gem 'friendly_id', '~> 5.0.0'
 gem 'devise-bootstrap-views'
+gem 'imdb', '~> 0.8'
 
 gem 'will_paginate', '~> 3.0.6'
 gem 'public_activity'
