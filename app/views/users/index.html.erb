@@ -1,6 +1,7 @@
 <% @users.each do |u| %>
     <% if u != current_user %>
-       <p><%= u.name %>  <%= u.email %>
+       <p class: "text-left" >
+       <%= display_avatar(u) %><%= u.name %>  <%= u.email %>
         <%= render :partial => 'follows/form', :locals => {:user => u} %>
         </p> 
     <% end %>

@@ -2,7 +2,12 @@ Rails.application.routes.draw do
   get 'users/index'
 
   resources :posts
-  devise_for :users
+  devise_for :users do 
+    member do
+      get :followers
+    end
+  end
+  resources :users
   get 'welcome/index'
   get 'home/index'
   get 'imdb_movies/index'
