@@ -18,6 +18,7 @@
  <h4>Comments</h4>
   <hr>
 <%= render 'comments/form', commentable: @post %>
+<hr>
 <div class="comments">
         <%= render(@comments) || render('shared/no_resources', resources: 'Comments') %>
 </div>

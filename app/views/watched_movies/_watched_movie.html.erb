@@ -1,6 +1,6 @@
 <div class="info">
   <h3><strong><%= link_to watched_movie.user.name, user_path(watched_movie.user) %></strong>
-<span class="action"> just watched <%= watched_movie.movie.title %></span>
+<span class="action"> just watched <%= link_to watched_movie.movie.title, imdb_movies_show_path(:movie_id => watched_movie.movie.imdbid) %></span>
 </div></h3>
 <div class="content">
   <div class="points">

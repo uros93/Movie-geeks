@@ -1,2 +1,8 @@
-<h2><%= @watched_movie.user.name %> just watched <%= @watched_movie.movie.title %></h2>
-<%= render 'comments/form', commentable: @watched_movie %>
+<div id="watchedmovie-<%= @watched_movie.id %>">
+    <h2><%= @watched_movie.user.name %> just watched <%= @watched_movie.movie.title %></h2>
+    <%= render 'comments/form', commentable: @watched_movie %>
+    <hr>
+    <div class="comments">
+            <%= render(@comments) || render('shared/no_resources', resources: 'Comments') %>
+    </div>
+</div>
