@@ -1,8 +1,8 @@
 <div class="info">
 
-  <h4 class="name"><%= post.user.name %></h4>
+  <h3><strong><%= post.user.name %></strong>
   <span class="action">created a <%= link_to 'post', post %></span>
-</div>
+</div></h3>
 <div class="content">
   <span class="text"><%= post.content %></span>
   <% if post.attachment.present? %>
@@ -18,10 +18,12 @@
         <%= link_to edit_post_path(post), class: 'btn btn-primary btn-sm' do %>
           <% fa_icon 'pencil' %>
         <% end %>
-        <%= link_to post_path(post), method: :delete, class:'btn btn-danger btn-sm', remote: remote do %>
+        <%= link_to post_path(post), method: :delete, class:'btn btn-danger btn-sm' do %>
           <% fa_icon 'trash' %>
         <% end %>
       <% end %>
     </div>
   </div>
 </div>
+ <hr>
+<%= render 'shared/actions', resource: post %>

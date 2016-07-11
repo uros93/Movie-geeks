@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
       comment.user = current_user
     end
     @comment.save
+    redirect_to @commentable
   end
 
   def destroy

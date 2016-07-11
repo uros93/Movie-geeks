@@ -1,5 +1,5 @@
 class LikesController < ApplicationController
-    before_action :find_likeable
+  before_action :find_likeable
   before_action :authenticate_user!
   respond_to :js
 
@@ -8,7 +8,7 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    @likeable.disliked_by current_user
+    @likeable.unliked_by current_user
   end
 
   private

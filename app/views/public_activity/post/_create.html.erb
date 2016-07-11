@@ -1,5 +1,5 @@
-<div class="activity-post">
-  <% if activity.trackable %>
-  <h2><%= activity.owner.name %></h2> created <%= link_to "post", activity.trackable %>
+<% if activity.trackable %>
+  <div id="post-<%= activity.trackable.id %>" class="activity-post">
+    <%= render activity.trackable %>
+  </div>
 <% end %>
-</div>
