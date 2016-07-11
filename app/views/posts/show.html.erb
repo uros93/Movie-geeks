@@ -1,13 +1,6 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-   <% if @post.attachment.present? %>
-    <div class="attachment">
-      <strong>Attachment:</strong>
-      <%= image_tag @post.attachment, size: "10x10" %>
-    </div>
-  <% end %>
-</p>
+<div id="post-<%= @post.id %>" >
+
 
 <p>
   <strong>Content:</strong>
@@ -25,3 +18,8 @@
  <h4>Comments</h4>
   <hr>
 <%= render 'comments/form', commentable: @post %>
+<div class="comments">
+        <%= render(@comments) || render('shared/no_resources', resources: 'Comments') %>
+</div>
+</div>
+

@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   
   has_many :posts
   has_many :comments
+  has_many :watched_movies
+  has_many :movies , through: :watched_movies
   
   mount_uploader :avatar, AvatarUploader
 

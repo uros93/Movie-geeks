@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160710191836) do
+ActiveRecord::Schema.define(version: 20160711184047) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -58,8 +58,15 @@ ActiveRecord::Schema.define(version: 20160710191836) do
   add_index "follows", ["followable_id", "followable_type"], name: "fk_followables"
   add_index "follows", ["follower_id", "follower_type"], name: "fk_follows"
 
+  create_table "movies", force: :cascade do |t|
+    t.string   "title"
+    t.string   "imdbid"
+    t.string   "poster"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "posts", force: :cascade do |t|
-    t.string   "attachment"
     t.text     "content"
     t.integer  "user_id"
     t.datetime "created_at", null: false
@@ -109,5 +116,15 @@ ActiveRecord::Schema.define(version: 20160710191836) do
 
   add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope"
   add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
+
+  create_table "watched_movies", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "movie_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "watched_movies", ["movie_id"], name: "index_watched_movies_on_movie_id"
+  add_index "watched_movies", ["user_id"], name: "index_watched_movies_on_user_id"
 
 end

@@ -1,0 +1,12 @@
+<div class="info">
+  <h3><strong><%= link_to watched_movie.user.name, user_path(watched_movie.user) %></strong>
+<span class="action"> just watched <%= watched_movie.movie.title %></span>
+</div></h3>
+<div class="content">
+  <div class="points">
+    <span class="like-count"><%= pluralize(watched_movie.get_likes.size, 'like') %></span>
+    <span class="comments-count"><%= pluralize(watched_movie.comments.size, 'comment') %></span>
+  </div>
+</div>
+ <hr>
+<%= render 'shared/actions', resource: watched_movie %>

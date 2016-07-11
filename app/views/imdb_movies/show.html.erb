@@ -1,6 +1,11 @@
 <p class="text-left"><%= image_tag @i.poster, size: "200x200", class: "img-thumbnail" %></p>
 
 <h1><%= @i.title %></h1>
+<%= form_tag watch_path(imdbid: @i.id), method: :post do %>
+    <% button_tag class: 'btn btn-default' do %>
+       Watch
+    <% end %>
+  <% end %>
 <h2>Rating: <%= @i.rating %></h2>
 
 Director: <%= @i.director.first %>

@@ -6,6 +6,7 @@
     <li><%= link_to "Find users", users_index_path %></li>
     <li><%= link_to "Find movies", imdb_movies_index_path %></li>
     <li><%= link_to 'Edit Profile', edit_user_path(current_user) %></li>
+    <li><%= link_to 'Profile', user_path(current_user) %></li>
 <% else %>
     <li><%= link_to "Sign in", new_user_session_path %></li>
     <li><%= link_to "Sign up", new_user_registration_path %></li>

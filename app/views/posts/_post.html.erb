@@ -1,15 +1,11 @@
 <div class="info">
 
-  <h3><strong><%= post.user.name %></strong>
+  <h3><strong><%= link_to post.user.name, user_path(post.user) %></strong>
   <span class="action">created a <%= link_to 'post', post %></span>
 </div></h3>
 <div class="content">
   <span class="text"><%= post.content %></span>
-  <% if post.attachment.present? %>
-    <div class="attachment">
-      <%= image_tag post.attachment, size: "10x10" %>
-    </div>
-  <% end %>
+  
   <div class="points">
     <span class="like-count"><%= pluralize(post.get_likes.size, 'like') %></span>
     <span class="comments-count"><%= pluralize(post.comments.size, 'comment') %></span>

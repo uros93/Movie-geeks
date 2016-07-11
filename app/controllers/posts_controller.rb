@@ -11,6 +11,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @comments = @post.comments.all
   end
 
   # GET /posts/new
@@ -27,9 +28,9 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.new(post_params)
     if @post.save
-      redirect_to root_path
+      redirect_to posts_path
     else
-      redirect_to root_path, notice: @post.errors.full_messages.first
+      redirect_to posts_path, notice: @post.errors.full_messages.first
     end
   end
 
@@ -53,7 +54,7 @@ class PostsController < ApplicationController
     @post.destroy
     respond_to do |format|
       format.js
-      format.html { redirect_to root_path }
+      format.html { redirect_to posts_path }
     end 
   
   end
@@ -66,6 +67,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:attachment, :content, :user_id)
+      params.require(:post).permit( :content, :user_id)
     end
 end

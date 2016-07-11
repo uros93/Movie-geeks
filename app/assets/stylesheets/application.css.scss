@@ -10,13 +10,23 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require font-awesome
- *= require_tree .
- *= require_self
  *
  */
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
 @import "variables";
 @import "*";
+
+.activity-comment, .activity-like, .comment, .like {
+  .content {
+    border: 1px solid #e0e0e0;
+    margin-left: 75px;
+    margin-right: 15px;
+    padding: 5px 15px;
+    .text {
+      font-size: 1.5rem;
+    }
+  }
+  }

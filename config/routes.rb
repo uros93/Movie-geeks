@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'users/index'
 
   resources :posts
+  resources :watched_movies
   resources :comments, only: [:create, :destroy]
   devise_for :users do 
     member do
@@ -18,6 +19,7 @@ Rails.application.routes.draw do
   match :unfollow, to: 'follows#destroy', as: :unfollow, via: :post
   match :like, to: 'likes#create', as: :like, via: :post
   match :unlike, to: 'likes#destroy', as: :unlike, via: :post
+  match :watch, to: 'watched_movies#create', as: :watch, via: :post
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
