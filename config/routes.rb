@@ -1,14 +1,23 @@
 Rails.application.routes.draw do
+  # match 'auth/:provider/callback', to: 'sessions#create'
+  # match 'auth/failure', to: redirect('/')
+  # match 'signout', to: 'sessions#destroy', as: 'signout'
+  
   get 'users/index'
+  get 'facebook_movies/index'
 
   resources :posts
   resources :watched_movies
   resources :comments, only: [:create, :destroy]
-  devise_for :users do 
+  
+  devise_for :users,  :controllers => { :omniauth_callbacks => "callbacks" } do 
     member do
       get :followers
     end
+    delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
   end
+  
+  
   resources :users
   get 'welcome/index'
   get 'home/index'

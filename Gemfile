@@ -31,6 +31,7 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-rails'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'koala'
 
 
 group :development do
