@@ -17,7 +17,19 @@
 @import "bootstrap";
 @import "font-awesome";
 @import "variables";
-@import "*";
+@import "1st_load_framework";
+@import "comments";
+@import "follows";
+@import "home";
+@import "imdb_movies";
+@import "likes";
+@import "movies";
+@import "posts";
+@import "reviews";
+@import "scaffolds";
+@import "users";
+@import "watched_movies";
+@import "welcome";
 
 .activity-comment, .activity-like, .comment, .like {
   .content {

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   # match 'auth/:provider/callback', to: 'sessions#create'
   # match 'auth/failure', to: redirect('/')
   # match 'signout', to: 'sessions#destroy', as: 'signout'

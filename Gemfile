@@ -33,6 +33,8 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'koala'
 
+gem 'activeadmin', github: 'activeadmin'
+gem 'active_skin'
 
 group :development do
   gem 'rails_layout'
