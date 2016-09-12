@@ -1,0 +1,12 @@
+<div class="info">
+  <h3><strong><%= link_to review.user.name, user_path(review.user) %></strong>
+<span class="action"> just left a review for <%= link_to review.movie.title, review_path(review) %></span>
+</div></h3>
+<div class="content">
+  <div class="points">
+    <span class="like-count"><%= pluralize(review.get_likes.size, 'like') %></span>
+    <span class="comments-count"><%= pluralize(review.comments.size, 'comment') %></span>
+  </div>
+</div>
+ <hr>
+<%= render 'shared/actions', resource: review %>

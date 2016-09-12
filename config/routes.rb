@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   
   get 'users/index'
   get 'facebook_movies/index'
-
+  
+  resources :reviews
   resources :posts
   resources :watched_movies
   resources :comments, only: [:create, :destroy]

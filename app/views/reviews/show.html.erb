@@ -1,0 +1,6 @@
+<h1><%= @review.movie.title %> review</h1>
+<h2>Grade: <%= @review.grade %></h2>
+<p><%= @review.content %></p>
+<% if @review.user == current_user %>
+<%= link_to 'Edit', edit_review_path(@review, :imdbid => @review.movie.imdbid) %>
+<% end %>

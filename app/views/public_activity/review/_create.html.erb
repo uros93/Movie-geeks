@@ -1,0 +1,5 @@
+<% if activity.trackable %>
+  <div id="review-<%= activity.trackable.id %>" class="activity-post">
+    <%= render activity.trackable %>
+  </div>
+<% end %>
